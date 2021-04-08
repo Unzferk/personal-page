@@ -1,0 +1,57 @@
+.contact-form{
+    margin: 0;
+    padding: 10px;
+    height: 565px;
+    background-color: steelblue;
+    background-image: url('../assets/img-font.jpg');
+    text-align: center;
+    flex-direction: column;
+    
+}
+.contact-form h1{
+    color: white;
+    
+}
+.contact-box{
+    margin: 100px;
+    width: 500;
+    background-color:transparent;
+    box-shadow: 0 0 20px 0 #999;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+} 
+form{
+    margin: 0px;
+}
+form .btn{
+    margin-top: 20px;
+
+}
+.input-field{
+    width: 400px;
+    height: 40px;
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #777;
+    border-radius: 14px;
+    outline: none;
+}
+.text-area{
+    height: 150px;
+    padding-top: 10px;
+}
+.contact btn{
+    border-radius: 14px;
+    margin-top: 18px;
+    padding: 10px;
+    cursor: pointer;
+    align-items: center;
+}
+
+.form-group p{
+    color:red;
+    
+}
