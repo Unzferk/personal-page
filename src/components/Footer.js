@@ -18,7 +18,7 @@ function Footer() {
                     <FaFacebook className='social-icon'/>
                     </a>
                     <Link to='/contact'>
-                    <ImMail4 className='social-icon'/>
+                        <ImMail4 className='social-icon'/>
                     </Link>
                     </div>
                 </div>

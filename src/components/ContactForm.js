@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 
 function ContactForm (){
 
-    const {register,handleSubmit,reset,formState, formState:{errors,isSubmitSuccessful}} = useForm({
+    const {register,handleSubmit,reset,formState, formState:{errors}} = useForm({
         defaultValues:{
             name:"",
             email:"",
@@ -18,8 +18,7 @@ function ContactForm (){
     const onSubmit = (data) =>{
 
         console.log(data);
-        console.log(register);
-        console.log(handleSubmit);
+
         emailjs.send('gmail', 'page_template', data, 'user_QHDcNWb9MuhduGEmlKyAu')
         .then((result) => {
             console.log(result.text);
@@ -45,8 +44,7 @@ function ContactForm (){
                 <h1>Send Me an Email</h1>  
                 <form onSubmit={handleSubmit(onSubmit)} className='contact-form__fields'>
                     <input type="text" 
-                           placeholder='Name' 
-                        
+                           placeholder='Name'    
                            className="input-field"
                            {...register("name",{required:true})}
                            >   
@@ -55,8 +53,7 @@ function ContactForm (){
                     <p>{errors.name?.type === 'required' && "This field is required"} </p>
 
                     <input type="email" 
-                           placeholder='Email' 
-                        
+                           placeholder='Email'    
                            className="input-field"
                            {...register("email",{required:true})}
                     >
@@ -65,8 +62,7 @@ function ContactForm (){
                     <p> {errors.email?.type === 'required' && "This field is required"} </p>
 
                     <input type="text" 
-                           placeholder='Subject'  
-                          
+                           placeholder='Subject'              
                            className="input-field"
                            {...register("subject",{required:true})}
                     >
@@ -74,21 +70,20 @@ function ContactForm (){
 
                     <p> {errors.subject?.type === 'required' && "This field is required"} </p>
 
-                    <textarea placeholder='Your Message' 
-                            
+                    <textarea placeholder='Your Message'   
                               className="input-field text-area"
                               {...register("msg",{required:true})}
                               >           
                     </textarea>
+
                     <p> {errors.msg?.type === 'required' && "This field is required"} </p>
                     
 
                     <input 
                             type="submit" 
                             className="btn btn--primary btn--medium" 
-                            value="Send Message"
-                            
-                            >                        
+                            value="Send Message"    
+                    >                        
                     </input>
                 </form>
             </div>        
