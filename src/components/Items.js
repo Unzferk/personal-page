@@ -8,9 +8,8 @@ function Items() {
         <>
         <video src='/videos/video-5.mp4' autoPlay loop muted/>
         <div className='contain'>
-             <h1>Knowledge in All of this Technologies!!</h1>
-        <div className='items'> 
-        
+            <h1>Knowledge in All of this Technologies!!</h1>
+            
             <div className='items__container'>
                         <Item 
                             src='images/knowledge/css.svg'
@@ -53,7 +52,7 @@ function Items() {
                             text='Sublime'
                         />
             </div>
-        </div>
+ 
         </div>
         
         </>

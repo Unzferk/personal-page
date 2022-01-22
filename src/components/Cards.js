@@ -6,8 +6,7 @@ function Cards() {
     return (
         <div className='cards'>
             <h2 className='hx'>Check Out to my Public Proyects!</h2>
-            <div className='cards__container'>
-                <div className='cards__wrapper'>
+            <div className='cards__container'>   
                     <ul className='cards__items'>
                         <CardsItem 
                             src='images/img-bot.jpg'
@@ -29,7 +28,7 @@ function Cards() {
                             path='https://github.com/Unzferk'
                         /> 
                     </ul>
-                </div>
+               
             </div>
         </div>
     )

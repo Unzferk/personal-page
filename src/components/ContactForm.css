@@ -1,17 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@500&display=swap');
+
 .contact-form{
+    display: flex;
     margin: 0;
-    padding: 10px;
-    height: 565px;
-    background-color: steelblue;
-    background-image: url('../assets/img-font.jpg');
+    padding: 20px 10px;
+    height: 100vh;
+    background-color: rgb(61, 116, 141);
     text-align: center;
     flex-direction: column;
-    
+    font-family: 'Oxanium',sans-serif;
 }
 .contact-form h1{
     color: white;
     
 }
+.contact-form__fields{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .contact-box{
     margin: 100px;
     width: 500;
@@ -53,5 +64,44 @@ form .btn{
 
 .form-group p{
     color:red;
-    
+}
+
+@media only screen and (max-width: 660px) {
+    .input-field{
+        width: 300px;
+        height: 40px;
+        margin-top: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .text-area{
+        height: 120px;
+        padding-top: 10px;
+    }
+    .contact-form h1{
+        font-size: 34px;
+        
+    }
+    .btn{
+        width: 300px;
+    }
+}
+@media only screen and (max-width: 450px) {
+    .input-field{
+        width: 220px;
+        height: 30px;
+        margin-top: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .text-area{
+        height: 100px;
+        padding-top: 10px;
+    }
+    .contact-form h1{
+        font-size: 28px;
+    }
+    .btn{
+        width: 220px;
+    }
 }

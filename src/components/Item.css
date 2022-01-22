@@ -1,6 +1,17 @@
-.contain{
-    
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@500&display=swap');
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Oxanium',sans-serif;
 }
+
+.contain h1{
+  margin-top: 15px;
+  font-size: 50px;
+}
+
 .video {
     object-fit: cover;
     width: 100%;
@@ -17,35 +28,22 @@ h1 {
     padding: 2rem;
   }
 
-  
-  
   .items__container {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    max-width: 1120px;
-    width: 90%;
-    margin: 0 auto;
-    padding: 10px;
     justify-content: center;
-   
+    width: 100%;
+    padding: 5px;
   }
   
  .item {
-     
      background-color: snow;
      display: flex;
-     width: 15%;
-     margin: 10px;
      flex-wrap: wrap;
+     width: 150px;
+     margin: 10px;
      border-radius: 10px;
-     /*
-    
-    
-    flex: 1;
-    margin: 0 1rem;
-    
-    */
   }
   
   .item__link {
@@ -104,7 +102,22 @@ h1 {
     font-size: 18px;
     line-height: 24px;
   }
-  
+
+  @media only screen and (max-width: 660px) {
+    .contain h1 {
+      font-size: 30px;
+    }
+
+
+  }
+  @media only screen and (max-width: 450px) {
+    .contain h1 {
+      font-size: 20px;
+    }
+   
+ 
+  }
+  /*
   @media only screen and (min-width: 1200px) {
     .content__blog__container {
       width: 84%;
@@ -121,6 +134,6 @@ h1 {
     .item {
       margin-bottom: 2rem;
     }
-  }
+  }*/
 
   

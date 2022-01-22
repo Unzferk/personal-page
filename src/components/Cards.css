@@ -1,5 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@500&display=swap');
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Oxanium',sans-serif;
+}
+
 .cards {
-    padding: 4rem;
+    padding: 1rem;
     background: #fff;
   }
   
@@ -10,23 +19,20 @@
     text-align: center;
     color: #000;
     font-size: 50px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
   }
   
   .cards__container {
     display: flex;
     flex-flow: column;
     align-items: center;
-    max-width: 1120px;
     width: 90%;
     margin: 0 auto;
-    font-family: Verdana;
+  
   }
   
   .cards__wrapper {
     position: relative;
     margin: 50px 0 45px;
-    font-family: Verdana;
   }
   
   .cards__items {
@@ -105,9 +111,19 @@
     color: #252e48;
     font-size: 14px;
     line-height: 24px;
-    font-family: Verdana;
   }
-  
+
+  @media screen and (max-width: 960px) {
+    .cards h2{
+      font-size: 40px;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .cards h2{
+      font-size: 30px;
+    }
+  }
+
   @media only screen and (min-width: 1200px) {
     .content__blog__container {
       width: 84%;

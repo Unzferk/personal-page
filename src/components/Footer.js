@@ -11,8 +11,8 @@ function Footer() {
                 <img src='/images/me.jpg' alt="self" className='profile' />
                 <div className='data'>
                     <h3>Unzueta Fernando</h3>
-                    <p>unzferk@gmail.com </p>
-                    <p>68518885</p>
+                    <p>fernando.unzueta.dev@gmail.com </p>
+                    <p>+591 68518885</p>
                     <div className='social'>
                     <a href='https://www.facebook.com/Unzferk/' target='_blank' rel="noreferrer">
                     <FaFacebook className='social-icon'/>

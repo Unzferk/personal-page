@@ -1,75 +1,97 @@
-import React from 'react';
-import useForm from './useForm';
+import { useForm } from 'react-hook-form';
 import './ContactForm.css';
-import validateForm from './validateForm'
+import emailjs from 'emailjs-com';
+import { useEffect } from 'react';
+
 
 function ContactForm (){
 
+    const {register,handleSubmit,reset,formState, formState:{errors,isSubmitSuccessful}} = useForm({
+        defaultValues:{
+            name:"",
+            email:"",
+            subject:"",
+            msg:""
+        }
+    });
+  
+    const onSubmit = (data) =>{
 
-    const {handleChange,values,handleSubmit,errors}=useForm(validateForm);
+        console.log(data);
+        console.log(register);
+        console.log(handleSubmit);
+        emailjs.send('gmail', 'page_template', data, 'user_QHDcNWb9MuhduGEmlKyAu')
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
+        });
+        alert('Your message has been sent!');
+
+    }
+    
+    useEffect(() => {
+        if(formState.isSubmitSuccessful){
+            reset({name:"",
+                    email:"",
+                    subject:"",
+                    msg:""});
+        }
+    }, [formState,reset]);
 
     return(
         <>
             <div className='contact-form'>
-                <h1>Send Me an Email</h1>
-                <form onSubmit={handleSubmit}>
-                    <div className="row pt-5 mx-auto">
-                        <div className="col-8 form-group mx-auto ">
-                            <input 
-                                type="text" 
-                                className="input-field" 
-                                placeholder="Name" 
-                                name="name"
-                                value={values.name}
-                                onChange={handleChange}
-                                
-                                />
-                            {errors.name && <p>* {errors.name}</p>}
-                        </div>
-                        <div className="col-8 form-group pt-2 mx-auto">
-                            <input 
-                                type="email" 
-                                className="input-field" 
-                                placeholder="Email Address" 
-                                name="email"
-                                value={values.email}
-                                onChange={handleChange}
-                                />
-                            {errors.email && <p>* {errors.email}</p>}
-                        </div>
-                        <div className="col-8 form-group pt-2 mx-auto">
-                            <input 
-                                type="text" 
-                                className="input-field" 
-                                placeholder="Subject" 
-                                name="subject"
-                                value={values.subject}
-                                onChange={handleChange}
-                                />
-                            {errors.subject && <p>* {errors.subject}</p>}
-                        </div>
-                        <div className="col-8 form-group pt-2 mx-auto">
-                            <textarea 
-                                className="input-field text-area" 
-                                id="" cols="30" 
-                                rows="8" 
-                                placeholder="Your message" 
-                                name="message"
-                                value={values.message}
-                                onChange={handleChange}
-                                >
-                            </textarea>
-                            {errors.message && <p>* {errors.message}</p>}
-                        </div>
-                        <div className="col-8 pt-2 mx-auto">
-                            <input 
+                <h1>Send Me an Email</h1>  
+                <form onSubmit={handleSubmit(onSubmit)} className='contact-form__fields'>
+                    <input type="text" 
+                           placeholder='Name' 
+                        
+                           className="input-field"
+                           {...register("name",{required:true})}
+                           >   
+                    </input>
+
+                    <p>{errors.name?.type === 'required' && "This field is required"} </p>
+
+                    <input type="email" 
+                           placeholder='Email' 
+                        
+                           className="input-field"
+                           {...register("email",{required:true})}
+                    >
+                    </input>
+
+                    <p> {errors.email?.type === 'required' && "This field is required"} </p>
+
+                    <input type="text" 
+                           placeholder='Subject'  
+                          
+                           className="input-field"
+                           {...register("subject",{required:true})}
+                    >
+                    </input>
+
+                    <p> {errors.subject?.type === 'required' && "This field is required"} </p>
+
+                    <textarea placeholder='Your Message' 
+                            
+                              className="input-field text-area"
+                              {...register("msg",{required:true})}
+                              >           
+                    </textarea>
+                    <p> {errors.msg?.type === 'required' && "This field is required"} </p>
+                    
+
+                    <input 
                             type="submit" 
                             className="btn btn--primary btn--medium" 
-                            value="Send Message"></input>
-                        </div>
-                    </div>
+                            value="Send Message"
+                            
+                            >                        
+                    </input>
                 </form>
-            </div>
+            </div>        
         </>
     )
 }
